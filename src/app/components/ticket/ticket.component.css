@@ -1,0 +1,49 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.example-card {
+  max-width: 300px;
+  max-height: 200px;
+}
+
+.example-header-image {
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
+  background-size: cover;
+}
+
+.tag-Feature {
+  background-color: #0026ff9f;
+  border: none;
+  color: white;
+  padding: 0px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  border-radius: 30px;
+  margin-right: 5px;
+}
+
+.tag-Bug {
+  background-color: #fc5d01;
+  border: none;
+  color: white;
+  padding: 0px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  border-radius: 30px;
+}
+
+.date {
+  display: flex;
+  align-items: center;
+}
+mat-icon {
+  margin-right: 8px; /* ajustez la marge en fonction de vos besoins */
+}
+
+mat-card-title {
+  font-size: 15px;
+  font-weight: bold;
+}
