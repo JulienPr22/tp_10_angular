@@ -15,7 +15,6 @@ export class AppComponent {
 
   goToTickets() {
     console.log('goToTickets');
-
     this.router.navigate(['/tickets']);
   }
 

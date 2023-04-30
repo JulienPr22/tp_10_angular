@@ -4,10 +4,11 @@
 
     <mat-card-subtitle>
       <div>
-        <span *ngFor="let tag of tags" class="tag-{{ tag }}">{{ tag }} </span>
+        <span *ngFor="let tag of tags" class="tag-{{ tag }}"
+          >{{ tag | titlecase }}
+        </span>
       </div>
-      <div class="date"></div>
-      <div class="date">
+      <div class="icon-text">
         <mat-icon
           aria-hidden="false"
           aria-label="Calendar icon"
@@ -17,13 +18,13 @@
           {{ creationDate | date : "dd/mm/YYYY" }}
         </p>
       </div>
-      <div class="date">
+      <div class="icon-text">
         <mat-icon
           aria-hidden="false"
           aria-label="Example home icon"
           fontIcon="person"
         ></mat-icon>
-        <p>Julien Perrier</p>
+        <p>{{ assignee }}</p>
       </div>
     </mat-card-subtitle>
   </mat-card-header>

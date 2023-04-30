@@ -1,11 +1,44 @@
-<div class="d-flex justify-content-center">
+<div class="ticket-detail">
   <mat-card class="example-card">
     <mat-card-header>
-      <mat-card-subtitle>Dog Breed</mat-card-subtitle>
-      <mat-card-title>Shiba Inu</mat-card-title>
+      <mat-card-title>{{ detailTicket.title }}</mat-card-title>
+      <mat-card-subtitle>
+        <div>
+          <span *ngFor="let tag of detailTicket.tags" class="tag-{{ tag }}"
+            >{{ tag | titlecase }}
+          </span>
+        </div>
+
+        <div class="icon-text">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Calendar icon"
+            fontIcon="calendar_month"
+          ></mat-icon>
+          <!-- <p>
+            {{ detailTicket.title | date : "dd/mm/YYYY" }}
+          </p> -->
+        </div>
+        <div class="icon-text">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="person"
+          ></mat-icon>
+          <p>Assigné : {{ detailTicket.assignee }}</p>
+        </div>
+        <div class="icon-text">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="person"
+          ></mat-icon>
+          <p>Responsable : {{ detailTicket.reporter }}</p>
+        </div></mat-card-subtitle
+      >
     </mat-card-header>
     <mat-card-content>
-      <p>This card has divider and indeterminate progress as footer</p>
+      <p>{{ detailTicket.description }}</p>
       <p>ezrty</p>
       <mat-divider></mat-divider>
     </mat-card-content>
