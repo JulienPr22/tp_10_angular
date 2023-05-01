@@ -1,0 +1,10 @@
+.ticket-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 50vh; /* Ajuster la hauteur selon les besoins */
+}
+
+.example-card {
+  min-width: 400px;
+}

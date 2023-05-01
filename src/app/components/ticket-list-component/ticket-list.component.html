@@ -1,0 +1,57 @@
+<div class="action">
+  <div class="example-button-row" (click)="addTicket()">
+    <button mat-raised-button color="primary">
+      Nouveau ticket <mat-icon>add</mat-icon>
+    </button>
+  </div>
+</div>
+<div class="kanban">
+  <div class="column">
+    <h2>TODO</h2>
+    <ul class="scrollable">
+      <li *ngFor="let summaryTicket of ticketsToDo">
+        <app-ticket
+          (click)="goToTicket(summaryTicket.id)"
+          [title]="summaryTicket.title"
+          [creationDate]="
+            this.util.transformToValidDate(summaryTicket.creationDate)
+          "
+          [assignee]="summaryTicket.assignee"
+          [tags]="summaryTicket.tags"
+        ></app-ticket>
+      </li>
+    </ul>
+  </div>
+  <div class="column">
+    <h2>In Progress</h2>
+    <ul class="scrollable">
+      <li *ngFor="let summaryTicket of ticketsInProgress">
+        <app-ticket
+          (click)="goToTicket(summaryTicket.id)"
+          [title]="summaryTicket.title"
+          [creationDate]="
+            this.util.transformToValidDate(summaryTicket.creationDate)
+          "
+          [assignee]="summaryTicket.assignee"
+          [tags]="summaryTicket.tags"
+        ></app-ticket>
+      </li>
+    </ul>
+  </div>
+  <div class="column">
+    <h2>Closed</h2>
+    <ul class="scrollable">
+      <li *ngFor="let summaryTicket of ticketsClosed">
+        <app-ticket
+          (click)="goToTicket(summaryTicket.id)"
+          [title]="summaryTicket.title"
+          [creationDate]="
+            this.util.transformToValidDate(summaryTicket.creationDate)
+          "
+          [assignee]="summaryTicket.assignee"
+          [tags]="summaryTicket.tags"
+        ></app-ticket>
+      </li>
+    </ul>
+  </div>
+</div>

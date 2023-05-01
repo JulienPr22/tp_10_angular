@@ -1,0 +1,78 @@
+[
+  {
+    "id": 6,
+    "title": "Ticket 1",
+    "creationDate": {
+      "nano": 934000000,
+      "year": 2023,
+      "monthValue": 4,
+      "dayOfMonth": 29,
+      "hour": 14,
+      "minute": 37,
+      "second": 7,
+      "month": "APRIL",
+      "dayOfWeek": "SATURDAY",
+      "dayOfYear": 119,
+      "chronology": { "id": "ISO", "calendarType": "iso8601", "isoBased": true }
+    },
+    "status": "TO_DO",
+    "tags": ["TECH"]
+  },
+  {
+    "id": 7,
+    "title": "Ticket 2",
+    "creationDate": {
+      "nano": 934000000,
+      "year": 2023,
+      "monthValue": 4,
+      "dayOfMonth": 29,
+      "hour": 14,
+      "minute": 37,
+      "second": 7,
+      "month": "APRIL",
+      "dayOfWeek": "SATURDAY",
+      "dayOfYear": 119,
+      "chronology": { "id": "ISO", "calendarType": "iso8601", "isoBased": true }
+    },
+    "status": "TO_DO",
+    "tags": ["FEATURE"]
+  },
+  {
+    "id": 8,
+    "title": "Ticket 3",
+    "creationDate": {
+      "nano": 934000000,
+      "year": 2023,
+      "monthValue": 4,
+      "dayOfMonth": 29,
+      "hour": 14,
+      "minute": 37,
+      "second": 7,
+      "month": "APRIL",
+      "dayOfWeek": "SATURDAY",
+      "dayOfYear": 119,
+      "chronology": { "id": "ISO", "calendarType": "iso8601", "isoBased": true }
+    },
+    "status": "DOING",
+    "tags": ["FEATURE"]
+  },
+  {
+    "id": 9,
+    "title": "Ticket 3",
+    "creationDate": {
+      "nano": 934000000,
+      "year": 2023,
+      "monthValue": 4,
+      "dayOfMonth": 29,
+      "hour": 14,
+      "minute": 37,
+      "second": 7,
+      "month": "APRIL",
+      "dayOfWeek": "SATURDAY",
+      "dayOfYear": 119,
+      "chronology": { "id": "ISO", "calendarType": "iso8601", "isoBased": true }
+    },
+    "status": "CLOSE",
+    "tags": ["FEATURE"]
+  }
+]

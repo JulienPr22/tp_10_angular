@@ -1,0 +1,15 @@
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+button {
+  inherits: true;
+  background: none;
+  border: none;
+}
+
+mat-icon {
+  color: white;
+}

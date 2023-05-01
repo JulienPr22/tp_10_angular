@@ -1,0 +1,75 @@
+<div class="ticket-detail">
+  <mat-card class="example-card">
+    <mat-card-header>
+      <mat-card-title>{{ detailTicket.title }}</mat-card-title>
+      <mat-card-subtitle>
+        <div>
+          <span *ngFor="let tag of detailTicket.tags" class="tag-{{ tag }}"
+            >{{ tag | titlecase }}
+          </span>
+        </div>
+
+        <div class="icon-text">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Calendar icon"
+            fontIcon="label_important"
+          ></mat-icon>
+          <p>
+            Statut :
+            {{ this.util.statusEnumToString(detailTicket.status) }}
+          </p>
+        </div>
+
+        <div class="icon-text">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Calendar icon"
+            fontIcon="calendar_month"
+          ></mat-icon>
+          <p>
+            Date de création :
+            {{
+              this.util.transformToValidDate(detailTicket.creationDate)
+                | date : "dd/MM/YYYY"
+            }}
+          </p>
+        </div>
+        <div class="icon-text">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="person"
+          ></mat-icon>
+          <p>Assigné : {{ detailTicket.assignee }}</p>
+        </div>
+
+        <div class="icon-text">
+          <mat-icon
+            aria-hidden="false"
+            aria-label="Example home icon"
+            fontIcon="person"
+          ></mat-icon>
+          <p>Responsable : {{ detailTicket.reporter }}</p>
+        </div></mat-card-subtitle
+      >
+    </mat-card-header>
+    <mat-divider></mat-divider>
+
+    <mat-card-content>
+      <p>{{ detailTicket.description }}</p>
+      <p>ezrty</p>
+      <mat-divider></mat-divider>
+    </mat-card-content>
+    <mat-card-actions>
+      <button (click)="editTicket()" mat-raised-button color="primary">
+        Modifier
+      </button>
+
+      <button (click)="deleteTicketDialog()" mat-raised-button color="warn">
+        Supprimer
+      </button>
+    </mat-card-actions>
+    <mat-card-footer> </mat-card-footer>
+  </mat-card>
+</div>
