@@ -4,9 +4,9 @@ import DateDTO from './date-dto';
 
 export default interface SummaryTicketDTO {
   id: number;
-  title: String;
+  title: string;
   creationDate: DateDTO;
-  assignee: String;
+  assignee: string;
   status: Status;
-  tags: Set<Tag>;
+  tags: Array<Tag>;
 }

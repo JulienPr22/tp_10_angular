@@ -4,12 +4,13 @@ import { TicketListComponent } from './components/ticket-list-component/ticket-l
 import { TicketDetailComponent } from './components/ticket-detail/ticket-detail.component';
 import { UserListComponent } from './components/user-list/user-list.component';
 import { AddTicketComponent } from './components/add-ticket/add-ticket.component';
+import { EditTicketComponent } from './components/edit-ticket/edit-ticket.component';
 
 const routes: Routes = [
   { path: '', component: TicketListComponent },
-  { path: 'tickets', component: TicketListComponent },
-  { path: 'ticket/:id', component: TicketDetailComponent },
+  { path: 'ticket/:ticketId', component: TicketDetailComponent },
   { path: 'create/ticket', component: AddTicketComponent },
+  { path: 'edit/ticket/:ticketId', component: EditTicketComponent },
   { path: 'users', component: UserListComponent },
 ];
 

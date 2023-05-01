@@ -1,5 +1,7 @@
 export enum Tag {
-  FEATURE = 'Feature',
-  BUG = 'Bug',
-  TECH = 'Tech',
+  FEATURE = 'FEATURE',
+  BUG = 'BUG',
+  TECH = 'TECH',
+  FRONT = 'FRONT',
+  BACK = 'BACK',
 }

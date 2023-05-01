@@ -1,1 +1,86 @@
-<app-edit-ticket [creation]="true"></app-edit-ticket>
+<body>
+  <div class="form">
+    <form
+      class="example-form"
+      [formGroup]="editTicketForm"
+      (ngSubmit)="onSubmit()"
+    >
+      <h2 class="title">Nouveau Ticket</h2>
+      <table class="example-full-width">
+        <tr>
+          <td>
+            <mat-form-field class="example-full-width">
+              <mat-label>Titre</mat-label>
+              <input matInput formControlName="title" />
+            </mat-form-field>
+          </td>
+          <td>
+            <p>
+              <mat-form-field appearance="fill">
+                <mat-label>Tags</mat-label>
+                <mat-select multiple formControlName="tags">
+                  <mat-option value="FEATURE">Feature</mat-option>
+                  <mat-option value="BUG">Bug</mat-option>
+                  <mat-option value="TECH">Tech</mat-option>
+                  <mat-option value="BACK">Back</mat-option>
+                  <mat-option value="FRONT">Front</mat-option>
+                </mat-select>
+              </mat-form-field>
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      <p>
+        <mat-form-field class="example-full-width">
+          <mat-label>Description</mat-label>
+          <textarea
+            matInput
+            rows="10"
+            cols="50"
+            formControlName="description"
+          ></textarea>
+        </mat-form-field>
+      </p>
+
+      <table class="example-full-width">
+        <tr>
+          <td>
+            <p>
+              <mat-form-field appearance="fill">
+                <mat-label>Reporter</mat-label>
+                <mat-select formControlName="reporter_id">
+                  <mat-option *ngFor="let user of users" [value]="user.id"
+                    >{{ user.firstname + " " + user.lastname }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </p>
+          </td>
+          <td>
+            <p>
+              <mat-form-field appearance="fill">
+                <mat-label>Assigné</mat-label>
+                <mat-select formControlName="assignee_id">
+                  <mat-option *ngFor="let user of users" [value]="user.id"
+                    >{{ user.firstname + " " + user.lastname }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </p>
+          </td>
+        </tr>
+      </table>
+
+      <button
+        type="submit"
+        [disabled]="!editTicketForm.valid"
+        mat-raised-button
+        color="primary"
+      >
+        Ajouter le ticket
+      </button>
+    </form>
+    <div class="form"></div>
+  </div>
+</body>

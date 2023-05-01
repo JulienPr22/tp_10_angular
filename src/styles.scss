@@ -37,6 +37,7 @@ h3 {
   display: inline-block;
   font-size: 10px;
   border-radius: 30px;
+  margin-right: 5px;
 }
 
 .tag-TECH {
@@ -49,6 +50,32 @@ h3 {
   display: inline-block;
   font-size: 10px;
   border-radius: 30px;
+  margin-right: 5px;
+}
+
+.tag-FRONT {
+  background-color: #00728f;
+  border: none;
+  color: white;
+  padding: 0px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  border-radius: 30px;
+  margin-right: 5px;
+}
+.tag-BACK {
+  background-color: #4e002e;
+  border: none;
+  color: white;
+  padding: 0px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 10px;
+  border-radius: 30px;
+  margin-right: 5px;
 }
 
 .icon-text {
@@ -63,4 +90,8 @@ mat-icon {
 mat-card-title {
   font-size: 15px;
   font-weight: bold;
+}
+
+button {
+  margin-right: 5px;
 }

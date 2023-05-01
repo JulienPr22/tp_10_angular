@@ -13,7 +13,9 @@
         <app-ticket
           (click)="goToTicket(summaryTicket.id)"
           [title]="summaryTicket.title"
-          [creationDate]="transformToValidDate(summaryTicket.creationDate)"
+          [creationDate]="
+            this.util.transformToValidDate(summaryTicket.creationDate)
+          "
           [assignee]="summaryTicket.assignee"
           [tags]="summaryTicket.tags"
         ></app-ticket>
@@ -27,7 +29,9 @@
         <app-ticket
           (click)="goToTicket(summaryTicket.id)"
           [title]="summaryTicket.title"
-          [creationDate]="transformToValidDate(summaryTicket.creationDate)"
+          [creationDate]="
+            this.util.transformToValidDate(summaryTicket.creationDate)
+          "
           [assignee]="summaryTicket.assignee"
           [tags]="summaryTicket.tags"
         ></app-ticket>
@@ -41,7 +45,9 @@
         <app-ticket
           (click)="goToTicket(summaryTicket.id)"
           [title]="summaryTicket.title"
-          [creationDate]="transformToValidDate(summaryTicket.creationDate)"
+          [creationDate]="
+            this.util.transformToValidDate(summaryTicket.creationDate)
+          "
           [assignee]="summaryTicket.assignee"
           [tags]="summaryTicket.tags"
         ></app-ticket>

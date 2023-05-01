@@ -16,6 +16,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditTicketComponent } from './components/edit-ticket/edit-ticket.component';
 import { MatTableModule } from '@angular/material/table';
 import { UserListComponent } from './components/user-list/user-list.component';
+import { MatInputModule } from '@angular/material/input';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { DeleteTicketDialogComponent } from './components/delete-ticket-dialog/delete-ticket-dialog.component';
+import { MatDialogModule } from '@angular/material/dialog';
 
 @NgModule({
   declarations: [
@@ -25,6 +29,7 @@ import { UserListComponent } from './components/user-list/user-list.component';
     AddTicketComponent,
     EditTicketComponent,
     UserListComponent,
+    DeleteTicketDialogComponent,
   ],
   imports: [
     CommonModule,
@@ -37,8 +42,10 @@ import { UserListComponent } from './components/user-list/user-list.component';
     MatFormFieldModule,
     MatSelectModule,
     ReactiveFormsModule,
-    FormsModule,
     MatTableModule,
+    MatInputModule,
+    BrowserAnimationsModule,
+    MatDialogModule,
   ],
   exports: [TicketComponent, MatIconModule],
 })

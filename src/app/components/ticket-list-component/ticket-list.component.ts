@@ -7,6 +7,7 @@ import { BehaviorSubject, Subject, first, takeUntil } from 'rxjs';
 import SummaryTicketDTO from 'src/app/shared/models/summary-ticket-dto';
 import { Status } from 'src/app/shared/enum/status';
 import DateDTO from 'src/app/shared/models/date-dto';
+import { Util } from 'src/app/util';
 
 @Component({
   selector: 'app-liste-tickets',
@@ -14,35 +15,31 @@ import DateDTO from 'src/app/shared/models/date-dto';
   styleUrls: ['./ticket-list.component.css'],
 })
 export class TicketListComponent implements OnInit {
-  summaryTickets: SummaryTicketDTO[] = [];
+  summaryTickets!: SummaryTicketDTO[];
 
-  constructor(public router: Router, private ticketService: TicketService) {}
+  constructor(
+    public router: Router,
+    private ticketService: TicketService,
+    public util: Util
+  ) {}
 
-  ngOnInit() {
+  async ngOnInit() {
+    console.log('getSummaryTickets');
+
     this.ticketService
       .getAllSummaryTickets()
       .subscribe((data: SummaryTicketDTO[]) => {
         this.summaryTickets = data;
-        console.log(JSON.stringify(data));
       });
   }
 
   goToTicket(ticketId: number) {
-    console.log('goToTicket');
     this.router.navigate(['/ticket', ticketId]);
   }
 
   addTicket() {
     console.log('addTicket');
     this.router.navigate(['/create/ticket']);
-  }
-
-  transformToValidDate(dateDTO: DateDTO) {
-    let date = new Date();
-    date.setFullYear(dateDTO.year);
-    date.setMonth(dateDTO.monthValue);
-    date.setDate(dateDTO.dayOfMonth);
-    return date;
   }
 
   get ticketsInProgress() {

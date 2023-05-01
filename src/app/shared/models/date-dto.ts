@@ -9,8 +9,8 @@ export default interface DateDTO {
   hour: number;
   minute: number;
   second: number;
-  month: String;
-  dayOfWeek: String;
+  month: string;
+  dayOfWeek: string;
   dayOfYear: number;
   chronology: { id: 'ISO'; calendarType: 'iso8601'; isoBased: true };
 }
