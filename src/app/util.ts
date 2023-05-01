@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import DateDTO from './shared/models/date-dto';
 import { Status } from './shared/enum/status';
 import { Tag } from './shared/enum/tag';
+import LocalDateDTO from './shared/models/date-time-dto';
 
 @Injectable({
   providedIn: 'root',
@@ -11,6 +12,23 @@ export class Util {
 
   transformToValidDate(dateDTO: DateDTO) {
     return new Date(dateDTO.year, dateDTO.monthValue - 1, dateDTO.dayOfMonth);
+  }
+
+  transformToValidLocalDate(dateTimeDTO: LocalDateDTO) {
+    return new Date(
+      dateTimeDTO.year,
+      dateTimeDTO.monthValue - 1,
+      dateTimeDTO.dayOfMonth
+    );
+  }
+
+  dateToString(dateDTO: DateDTO): string {
+    let dateString = '';
+    // dateDTO.dayOfMonth.toString();
+    dateString += '/';
+    dateString += (dateDTO.monthValue - 1).toString();
+    dateString += dateDTO.year.toString();
+    return dateString;
   }
 
   statusEnumToString(status: Status) {

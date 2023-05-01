@@ -1,37 +1,55 @@
-import { Component, ViewChild } from '@angular/core';
+import { formatDate } from '@angular/common';
+import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatTable } from '@angular/material/table';
+import { UserService } from 'src/app/services/user.service';
+import UserDTO from 'src/app/shared/models/user-dto';
+import { Util } from 'src/app/util';
 
-export interface PeriodicElement {
-  name: string;
+export interface usersTable {
   position: number;
-  weight: number;
-  symbol: string;
+  firstname: string;
+  lastname: string;
+  registrationDate: string;
 }
 
-const ELEMENT_DATA: PeriodicElement[] = [
-  { position: 1, name: 'Hydrogen', weight: 1.0079, symbol: 'H' },
-  { position: 2, name: 'Helium', weight: 4.0026, symbol: 'He' },
-  { position: 3, name: 'Lithium', weight: 6.941, symbol: 'Li' },
-  { position: 4, name: 'Beryllium', weight: 9.0122, symbol: 'Be' },
-  { position: 5, name: 'Boron', weight: 10.811, symbol: 'B' },
-  { position: 6, name: 'Carbon', weight: 12.0107, symbol: 'C' },
-  { position: 7, name: 'Nitrogen', weight: 14.0067, symbol: 'N' },
-  { position: 8, name: 'Oxygen', weight: 15.9994, symbol: 'O' },
-  { position: 9, name: 'Fluorine', weight: 18.9984, symbol: 'F' },
-  { position: 10, name: 'Neon', weight: 20.1797, symbol: 'Ne' },
-];
+const ELEMENT_DATA: usersTable[] = [];
 
 @Component({
   selector: 'app-user-list',
   templateUrl: './user-list.component.html',
   styleUrls: ['./user-list.component.css'],
 })
-export class UserListComponent {
-  displayedColumns: string[] = ['position', 'name', 'weight', 'symbol'];
+export class UserListComponent implements OnInit {
+  users: UserDTO[] = [];
+  displayedColumns: string[] = [
+    'position',
+    'firstname',
+    'lastname',
+    'registrationDate',
+  ];
   dataSource = [...ELEMENT_DATA];
 
   @ViewChild(MatTable)
-  table!: MatTable<PeriodicElement>;
+  table!: MatTable<usersTable>;
+
+  constructor(private userService: UserService, private util: Util) {}
+
+  ngOnInit() {
+    this.userService.getUsers().subscribe((data: UserDTO[]) => {
+      this.users = data;
+      let position = 1;
+      for (let user of this.users) {
+        this.dataSource.push({
+          position: position,
+          firstname: user.firstname,
+          lastname: user.lastname,
+          registrationDate: 'undifined',
+        });
+        position++;
+      }
+      this.table.renderRows();
+    });
+  }
 
   addData() {
     const randomElementIndex = Math.floor(Math.random() * ELEMENT_DATA.length);

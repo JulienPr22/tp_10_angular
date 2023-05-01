@@ -1,10 +1,8 @@
-import { Status } from '../enum/status';
-import { Tag } from '../enum/tag';
-import DateDTO from './date-dto';
+import DateTimeDTO from './date-time-dto';
 
 export default interface UserDTO {
   id: number;
   firstname: string;
-  lastname: DateDTO;
-  registrationdate: DateDTO;
+  lastname: string;
+  registrationdate: DateTimeDTO;
 }
